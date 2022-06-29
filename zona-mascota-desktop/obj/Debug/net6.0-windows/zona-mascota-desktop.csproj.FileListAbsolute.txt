@@ -5,7 +5,6 @@ D:\C# apps\zona-mascota-desktop\zona-mascota-desktop\bin\Debug\net6.0-windows\zo
 D:\C# apps\zona-mascota-desktop\zona-mascota-desktop\bin\Debug\net6.0-windows\zona-mascota-desktop.pdb
 D:\C# apps\zona-mascota-desktop\zona-mascota-desktop\bin\Debug\net6.0-windows\MaterialSkin.dll
 D:\C# apps\zona-mascota-desktop\zona-mascota-desktop\obj\Debug\net6.0-windows\zona-mascota-desktop.csproj.AssemblyReference.cache
-D:\C# apps\zona-mascota-desktop\zona-mascota-desktop\obj\Debug\net6.0-windows\zona_mascota_desktop.Form1.resources
 D:\C# apps\zona-mascota-desktop\zona-mascota-desktop\obj\Debug\net6.0-windows\zona-mascota-desktop.csproj.GenerateResource.cache
 D:\C# apps\zona-mascota-desktop\zona-mascota-desktop\obj\Debug\net6.0-windows\zona-mascota-desktop.GeneratedMSBuildEditorConfig.editorconfig
 D:\C# apps\zona-mascota-desktop\zona-mascota-desktop\obj\Debug\net6.0-windows\zona-mascota-desktop.AssemblyInfoInputs.cache
@@ -17,3 +16,4 @@ D:\C# apps\zona-mascota-desktop\zona-mascota-desktop\obj\Debug\net6.0-windows\re
 D:\C# apps\zona-mascota-desktop\zona-mascota-desktop\obj\Debug\net6.0-windows\zona-mascota-desktop.pdb
 D:\C# apps\zona-mascota-desktop\zona-mascota-desktop\obj\Debug\net6.0-windows\zona-mascota-desktop.genruntimeconfig.cache
 D:\C# apps\zona-mascota-desktop\zona-mascota-desktop\obj\Debug\net6.0-windows\ref\zona-mascota-desktop.dll
+D:\C# apps\zona-mascota-desktop\zona-mascota-desktop\obj\Debug\net6.0-windows\zona_mascota_desktop.MainMenu.resources

@@ -3,9 +3,9 @@ using MaterialSkin.Controls;
 
 namespace zona_mascota_desktop
 {
-    public partial class Form1 : MaterialForm
+    public partial class MainMenu : MaterialForm
     {
-        public Form1()
+        public MainMenu()
         {
             InitializeComponent();
             var materialSkinManager = MaterialSkinManager.Instance;
@@ -25,6 +25,16 @@ namespace zona_mascota_desktop
         }
 
         private void materialTextBox24_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialListView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDNIClient_Click(object sender, EventArgs e)
         {
 
         }
