@@ -5,14 +5,15 @@ using Models;
 
 namespace Services
 {
-    public class Customer: Connection
+    public class Order:Connection
     {
-        public void registerCustomer(string name, int district, string email, int dni, int phone)
+        public void registerOrder(int employee, int customer)
         {
             // Mensajes por defecto
             this.status = 1;
             this.message = "Proceso ejecutado correctamente";
             // Proceso General
+
             using (SqlConnection con = new SqlConnection(stringConnection))
             {
                 try
@@ -22,13 +23,10 @@ namespace Services
                     // El comando
                     SqlCommand cmd = con.CreateCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "dbo.usp_register_customer";
+                    cmd.CommandText = "dbo.usp_register_order";
                     // Parametros
-                    cmd.Parameters.Add("@p_name", SqlDbType.VarChar, 100).Value = name;
-                    cmd.Parameters.Add("@p_district", SqlDbType.Int).Value = district;
-                    cmd.Parameters.Add("@p_email", SqlDbType.VarChar, 100).Value = email;
-                    cmd.Parameters.Add("@p_dni", SqlDbType.Int).Value = dni;
-                    cmd.Parameters.Add("@p_phone", SqlDbType.Int).Value = phone;
+                    cmd.Parameters.Add("@p_employee", SqlDbType.Int).Value = employee;
+                    cmd.Parameters.Add("@p_customer", SqlDbType.Int).Value = customer;
                     cmd.Parameters.Add("@p_id", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@p_status", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@p_message", SqlDbType.VarChar, 1000).Direction = ParameterDirection.Output;
@@ -45,23 +43,19 @@ namespace Services
                 }
             }
         }
-        public DataTable getCustomers()
+        public double showTotal()
         {
-            DataTable tb = new DataTable();
-            SqlDataReader reader;
             using (SqlConnection con = new SqlConnection(stringConnection))
             {
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
-                cmd.CommandText = ("SELECT * FROM Customer");
-                reader = cmd.ExecuteReader();
-                tb.Load(reader);
-                reader.Close();
+                cmd.CommandText = ("SELECT productDescription, unitPrice, quantity, subtotal FROM OrderDetails od " +
+                    "JOIN Product p ON od.ProductID = p.ProductID" +
+                    " WHERE od.OrderID = (SELECT MAX(OrderID) FROM Orders)");
                 con.Close();
             }
 
-            return tb;
+            return 0;
         }
-
     }
 }

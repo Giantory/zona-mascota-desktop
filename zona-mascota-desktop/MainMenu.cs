@@ -21,6 +21,9 @@ namespace zona_mascota_desktop
             Pet pet = new Pet();
             dataGridPets.DataSource = pet.getPets();
 
+            Product product = new Product();
+            dataGridProducts.DataSource = product.getProducts();
+
         }
       
 
@@ -30,6 +33,8 @@ namespace zona_mascota_desktop
             Sex sex = new Sex();    
             Specie specie = new Specie();
             Customer customer = new Customer();
+            Category category = new Category();
+            Product product = new Product();
 
             cbxCustomerLocation.DataSource = dist.getDistricts();
             cbxCustomerLocation.DisplayMember = "districtName";
@@ -46,6 +51,18 @@ namespace zona_mascota_desktop
             cbxPetOwner.DataSource = customer.getCustomers();
             cbxPetOwner.DisplayMember = "customerName";
             cbxPetOwner.ValueMember = "CustomerID";
+
+            cbxProductCategory.DataSource = category.getCategories();
+            cbxProductCategory.DisplayMember = "categoryName";
+            cbxProductCategory.ValueMember = "CategoryID";
+
+            cbxCustomerOrder.DataSource = customer.getCustomers();
+            cbxCustomerOrder.DisplayMember = "customerName";
+            cbxCustomerOrder.ValueMember = "CustomerID";
+
+            cbxProducts.DataSource = product.getProducts();
+            cbxProducts.DisplayMember = "productDescription";
+            cbxProducts.ValueMember = "productID";
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -60,13 +77,13 @@ namespace zona_mascota_desktop
         {
             string name = txtCustomerName.Text;
             int district = cbxCustomerLocation.SelectedIndex+1;
-            MessageBox.Show(cbxCustomerLocation.SelectedIndex.ToString());
             int dni = int.Parse(txtCustomerDNI.Text);
             string email = txtCustomerEmail.Text;
             int phone = int.Parse(txtCustomerPhone.Text);
             Customer customer = new Customer();
             customer.registerCustomer(name, district, email, dni, phone);
             dataGridCustomers.DataSource = customer.getCustomers();
+            lblOrderMsg.Text = customer.message;
             if (customer.status != 1)
             {
                 lblCusMsg.Visible = true;
@@ -94,6 +111,108 @@ namespace zona_mascota_desktop
             {
                 lblPetMsg.Visible = true;
             }
+        }
+
+        private void tabProducts_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialLabel7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtProductSalePrice_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtProductPurchasePrice_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbxProductCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtProductStock_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtProductDescription_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRegisterProduct_Click(object sender, EventArgs e)
+        {
+            string description = txtProductDescription.Text;
+            int category = cbxProductCategory.SelectedIndex + 1;
+            int stock = int.Parse(txtProductStock.Text);
+            double purchasePrice = double.Parse(txtProductPurchasePrice.Text);
+            double salePrice = double.Parse(txtProductSalePrice.Text);
+
+            Product product = new Product();
+            product.registerProduct(description, category, purchasePrice, salePrice);
+            dataGridProducts.DataSource = product.getProducts();
+            if (product.status != 1)
+            {
+                lblPrdMsg.Visible = true;
+            }
+
+
+        }
+
+        private void materialCard4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void orderDetailsForm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnRegisterOrder_Click(object sender, EventArgs e)
+        {
+            int emp = 3;
+            int customer = cbxCustomerOrder.SelectedIndex + 1;
+
+            Order order = new Order();
+            order.registerOrder(emp, customer);
+            lblOrderMsg.Text = order.message;
+            if (order.status != 1)
+            {
+                lblOrderMsg.Visible = true;
+            }else
+            {
+                orderDetailsForm.Enabled = true;
+                orderForm.Enabled = false;
+            }
+        }
+
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+            int product = cbxProducts.SelectedIndex + 1;
+            int quantity = int.Parse(txtQuantity.Text);
+
+            OrderDetails od = new OrderDetails();
+            od.registerOrderDetails(product, quantity);
+            lblOdMsg.Text = od.message;
+            if (od.status != 1)
+            {
+                lblOdMsg.Visible = true;
+            }
+            else
+            {
+                dataGridSummary.DataSource = od.showSummary();
+
+            }
+
         }
     }
 }
