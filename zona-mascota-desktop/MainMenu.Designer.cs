@@ -34,7 +34,7 @@
             this.tabClients = new System.Windows.Forms.TabPage();
             this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
             this.txtCustomerPhone = new MaterialSkin.Controls.MaterialTextBox2();
-            this.lblMessage = new MaterialSkin.Controls.MaterialLabel();
+            this.lblCusMsg = new MaterialSkin.Controls.MaterialLabel();
             this.btnRegisterClient = new MaterialSkin.Controls.MaterialButton();
             this.txtCustomerEmail = new MaterialSkin.Controls.MaterialTextBox2();
             this.cbxCustomerLocation = new MaterialSkin.Controls.MaterialComboBox();
@@ -44,15 +44,16 @@
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.dataGridCustomers = new System.Windows.Forms.DataGridView();
             this.tabMascotas = new System.Windows.Forms.TabPage();
+            this.materialCard1 = new MaterialSkin.Controls.MaterialCard();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.dataGridPets = new System.Windows.Forms.DataGridView();
+            this.txtPetName = new MaterialSkin.Controls.MaterialTextBox2();
+            this.cbxPetOwner = new MaterialSkin.Controls.MaterialComboBox();
+            this.btnRegisterPet = new MaterialSkin.Controls.MaterialButton();
             this.txtPetWeight = new MaterialSkin.Controls.MaterialTextBox2();
             this.cbxPetSpecie = new MaterialSkin.Controls.MaterialComboBox();
             this.cbxPetSex = new MaterialSkin.Controls.MaterialComboBox();
-            this.cbxPetOwner = new MaterialSkin.Controls.MaterialComboBox();
-            this.btnRegisterPet = new MaterialSkin.Controls.MaterialButton();
-            this.txtPetName = new MaterialSkin.Controls.MaterialTextBox2();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.dataGridPets = new System.Windows.Forms.DataGridView();
             this.tabProducts = new System.Windows.Forms.TabPage();
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
@@ -79,11 +80,13 @@
             this.materialDivider2 = new MaterialSkin.Controls.MaterialDivider();
             this.materialCheckbox1 = new MaterialSkin.Controls.MaterialCheckbox();
             this.materialCheckbox2 = new MaterialSkin.Controls.MaterialCheckbox();
+            this.lblPetMsg = new MaterialSkin.Controls.MaterialLabel();
             this.materialTabControl1.SuspendLayout();
             this.tabClients.SuspendLayout();
             this.materialCard2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCustomers)).BeginInit();
             this.tabMascotas.SuspendLayout();
+            this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPets)).BeginInit();
             this.tabProducts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProducts)).BeginInit();
@@ -129,7 +132,7 @@
             // 
             this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard2.Controls.Add(this.txtCustomerPhone);
-            this.materialCard2.Controls.Add(this.lblMessage);
+            this.materialCard2.Controls.Add(this.lblCusMsg);
             this.materialCard2.Controls.Add(this.btnRegisterClient);
             this.materialCard2.Controls.Add(this.txtCustomerEmail);
             this.materialCard2.Controls.Add(this.cbxCustomerLocation);
@@ -177,18 +180,18 @@
             this.txtCustomerPhone.TrailingIcon = null;
             this.txtCustomerPhone.UseSystemPasswordChar = false;
             // 
-            // lblMessage
+            // lblCusMsg
             // 
-            this.lblMessage.AutoSize = true;
-            this.lblMessage.Depth = 0;
-            this.lblMessage.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblMessage.Location = new System.Drawing.Point(19, 287);
-            this.lblMessage.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(152, 19);
-            this.lblMessage.TabIndex = 18;
-            this.lblMessage.Text = "Information Message";
-            this.lblMessage.Visible = false;
+            this.lblCusMsg.AutoSize = true;
+            this.lblCusMsg.Depth = 0;
+            this.lblCusMsg.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblCusMsg.Location = new System.Drawing.Point(19, 287);
+            this.lblCusMsg.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblCusMsg.Name = "lblCusMsg";
+            this.lblCusMsg.Size = new System.Drawing.Size(152, 19);
+            this.lblCusMsg.TabIndex = 18;
+            this.lblCusMsg.Text = "Information Message";
+            this.lblCusMsg.Visible = false;
             // 
             // btnRegisterClient
             // 
@@ -370,15 +373,9 @@
             // 
             // tabMascotas
             // 
-            this.tabMascotas.Controls.Add(this.materialLabel6);
+            this.tabMascotas.Controls.Add(this.materialCard1);
             this.tabMascotas.Controls.Add(this.materialLabel3);
             this.tabMascotas.Controls.Add(this.dataGridPets);
-            this.tabMascotas.Controls.Add(this.txtPetWeight);
-            this.tabMascotas.Controls.Add(this.cbxPetSpecie);
-            this.tabMascotas.Controls.Add(this.cbxPetSex);
-            this.tabMascotas.Controls.Add(this.cbxPetOwner);
-            this.tabMascotas.Controls.Add(this.btnRegisterPet);
-            this.tabMascotas.Controls.Add(this.txtPetName);
             this.tabMascotas.ImageKey = "huella_png_64.png";
             this.tabMascotas.Location = new System.Drawing.Point(4, 39);
             this.tabMascotas.Name = "tabMascotas";
@@ -387,41 +384,114 @@
             this.tabMascotas.Text = "Mascotas";
             this.tabMascotas.UseVisualStyleBackColor = true;
             // 
+            // materialCard1
+            // 
+            this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.lblPetMsg);
+            this.materialCard1.Controls.Add(this.materialLabel6);
+            this.materialCard1.Controls.Add(this.txtPetName);
+            this.materialCard1.Controls.Add(this.cbxPetOwner);
+            this.materialCard1.Controls.Add(this.btnRegisterPet);
+            this.materialCard1.Controls.Add(this.txtPetWeight);
+            this.materialCard1.Controls.Add(this.cbxPetSpecie);
+            this.materialCard1.Controls.Add(this.cbxPetSex);
+            this.materialCard1.Depth = 0;
+            this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard1.Location = new System.Drawing.Point(826, 103);
+            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialCard1.Name = "materialCard1";
+            this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard1.Size = new System.Drawing.Size(664, 300);
+            this.materialCard1.TabIndex = 24;
+            // 
             // materialLabel6
             // 
             this.materialLabel6.AutoSize = true;
             this.materialLabel6.Depth = 0;
             this.materialLabel6.Font = new System.Drawing.Font("Roboto", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel6.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
-            this.materialLabel6.Location = new System.Drawing.Point(847, 56);
+            this.materialLabel6.Location = new System.Drawing.Point(17, 14);
             this.materialLabel6.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel6.Name = "materialLabel6";
             this.materialLabel6.Size = new System.Drawing.Size(281, 41);
             this.materialLabel6.TabIndex = 23;
             this.materialLabel6.Text = "Registrar Mascota";
             // 
-            // materialLabel3
+            // txtPetName
             // 
-            this.materialLabel3.AutoSize = true;
-            this.materialLabel3.Depth = 0;
-            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel3.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
-            this.materialLabel3.Location = new System.Drawing.Point(14, 46);
-            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel3.Name = "materialLabel3";
-            this.materialLabel3.Size = new System.Drawing.Size(153, 41);
-            this.materialLabel3.TabIndex = 22;
-            this.materialLabel3.Text = "Mascotas";
+            this.txtPetName.AnimateReadOnly = false;
+            this.txtPetName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtPetName.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtPetName.Depth = 0;
+            this.txtPetName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPetName.HelperText = "Nombre";
+            this.txtPetName.HideSelection = true;
+            this.txtPetName.Hint = "Nombre";
+            this.txtPetName.LeadingIcon = null;
+            this.txtPetName.Location = new System.Drawing.Point(17, 68);
+            this.txtPetName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPetName.MaxLength = 32767;
+            this.txtPetName.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtPetName.Name = "txtPetName";
+            this.txtPetName.PasswordChar = '\0';
+            this.txtPetName.PrefixSuffixText = null;
+            this.txtPetName.ReadOnly = false;
+            this.txtPetName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtPetName.SelectedText = "";
+            this.txtPetName.SelectionLength = 0;
+            this.txtPetName.SelectionStart = 0;
+            this.txtPetName.ShortcutsEnabled = true;
+            this.txtPetName.Size = new System.Drawing.Size(297, 48);
+            this.txtPetName.TabIndex = 14;
+            this.txtPetName.TabStop = false;
+            this.txtPetName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtPetName.TrailingIcon = null;
+            this.txtPetName.UseSystemPasswordChar = false;
             // 
-            // dataGridPets
+            // cbxPetOwner
             // 
-            this.dataGridPets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridPets.Location = new System.Drawing.Point(14, 103);
-            this.dataGridPets.Name = "dataGridPets";
-            this.dataGridPets.RowHeadersWidth = 51;
-            this.dataGridPets.RowTemplate.Height = 29;
-            this.dataGridPets.Size = new System.Drawing.Size(795, 188);
-            this.dataGridPets.TabIndex = 21;
+            this.cbxPetOwner.AutoResize = false;
+            this.cbxPetOwner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbxPetOwner.Depth = 0;
+            this.cbxPetOwner.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cbxPetOwner.DropDownHeight = 174;
+            this.cbxPetOwner.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxPetOwner.DropDownWidth = 121;
+            this.cbxPetOwner.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cbxPetOwner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cbxPetOwner.FormattingEnabled = true;
+            this.cbxPetOwner.Hint = "Dueño";
+            this.cbxPetOwner.IntegralHeight = false;
+            this.cbxPetOwner.ItemHeight = 43;
+            this.cbxPetOwner.Location = new System.Drawing.Point(320, 67);
+            this.cbxPetOwner.MaxDropDownItems = 4;
+            this.cbxPetOwner.MouseState = MaterialSkin.MouseState.OUT;
+            this.cbxPetOwner.Name = "cbxPetOwner";
+            this.cbxPetOwner.Size = new System.Drawing.Size(309, 49);
+            this.cbxPetOwner.StartIndex = 0;
+            this.cbxPetOwner.TabIndex = 17;
+            this.cbxPetOwner.Tag = "";
+            // 
+            // btnRegisterPet
+            // 
+            this.btnRegisterPet.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnRegisterPet.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnRegisterPet.Depth = 0;
+            this.btnRegisterPet.HighEmphasis = true;
+            this.btnRegisterPet.Icon = null;
+            this.btnRegisterPet.Location = new System.Drawing.Point(17, 242);
+            this.btnRegisterPet.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
+            this.btnRegisterPet.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnRegisterPet.Name = "btnRegisterPet";
+            this.btnRegisterPet.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnRegisterPet.Size = new System.Drawing.Size(99, 36);
+            this.btnRegisterPet.TabIndex = 15;
+            this.btnRegisterPet.Text = "Registrar";
+            this.btnRegisterPet.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnRegisterPet.UseAccentColor = false;
+            this.btnRegisterPet.UseVisualStyleBackColor = true;
+            this.btnRegisterPet.Click += new System.EventHandler(this.btnRegisterPet_Click);
             // 
             // txtPetWeight
             // 
@@ -434,7 +504,7 @@
             this.txtPetWeight.HideSelection = true;
             this.txtPetWeight.Hint = "Peso";
             this.txtPetWeight.LeadingIcon = null;
-            this.txtPetWeight.Location = new System.Drawing.Point(1248, 192);
+            this.txtPetWeight.Location = new System.Drawing.Point(418, 124);
             this.txtPetWeight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPetWeight.MaxLength = 32767;
             this.txtPetWeight.MouseState = MaterialSkin.MouseState.OUT;
@@ -469,7 +539,7 @@
             this.cbxPetSpecie.Hint = "Especie";
             this.cbxPetSpecie.IntegralHeight = false;
             this.cbxPetSpecie.ItemHeight = 43;
-            this.cbxPetSpecie.Location = new System.Drawing.Point(847, 191);
+            this.cbxPetSpecie.Location = new System.Drawing.Point(17, 123);
             this.cbxPetSpecie.MaxDropDownItems = 4;
             this.cbxPetSpecie.MouseState = MaterialSkin.MouseState.OUT;
             this.cbxPetSpecie.Name = "cbxPetSpecie";
@@ -493,7 +563,7 @@
             this.cbxPetSex.Hint = "Sexo";
             this.cbxPetSex.IntegralHeight = false;
             this.cbxPetSex.ItemHeight = 43;
-            this.cbxPetSex.Location = new System.Drawing.Point(1045, 191);
+            this.cbxPetSex.Location = new System.Drawing.Point(215, 123);
             this.cbxPetSex.MaxDropDownItems = 4;
             this.cbxPetSex.MouseState = MaterialSkin.MouseState.OUT;
             this.cbxPetSex.Name = "cbxPetSex";
@@ -502,79 +572,28 @@
             this.cbxPetSex.TabIndex = 18;
             this.cbxPetSex.Tag = "";
             // 
-            // cbxPetOwner
+            // materialLabel3
             // 
-            this.cbxPetOwner.AutoResize = false;
-            this.cbxPetOwner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbxPetOwner.Depth = 0;
-            this.cbxPetOwner.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cbxPetOwner.DropDownHeight = 174;
-            this.cbxPetOwner.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxPetOwner.DropDownWidth = 121;
-            this.cbxPetOwner.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cbxPetOwner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cbxPetOwner.FormattingEnabled = true;
-            this.cbxPetOwner.Hint = "Dueño";
-            this.cbxPetOwner.IntegralHeight = false;
-            this.cbxPetOwner.ItemHeight = 43;
-            this.cbxPetOwner.Location = new System.Drawing.Point(1212, 126);
-            this.cbxPetOwner.MaxDropDownItems = 4;
-            this.cbxPetOwner.MouseState = MaterialSkin.MouseState.OUT;
-            this.cbxPetOwner.Name = "cbxPetOwner";
-            this.cbxPetOwner.Size = new System.Drawing.Size(309, 49);
-            this.cbxPetOwner.StartIndex = 0;
-            this.cbxPetOwner.TabIndex = 17;
-            this.cbxPetOwner.Tag = "";
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabel3.FontType = MaterialSkin.MaterialSkinManager.fontType.H4;
+            this.materialLabel3.Location = new System.Drawing.Point(14, 46);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(153, 41);
+            this.materialLabel3.TabIndex = 22;
+            this.materialLabel3.Text = "Mascotas";
             // 
-            // btnRegisterPet
+            // dataGridPets
             // 
-            this.btnRegisterPet.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnRegisterPet.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnRegisterPet.Depth = 0;
-            this.btnRegisterPet.HighEmphasis = true;
-            this.btnRegisterPet.Icon = null;
-            this.btnRegisterPet.Location = new System.Drawing.Point(847, 265);
-            this.btnRegisterPet.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
-            this.btnRegisterPet.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnRegisterPet.Name = "btnRegisterPet";
-            this.btnRegisterPet.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnRegisterPet.Size = new System.Drawing.Size(99, 36);
-            this.btnRegisterPet.TabIndex = 15;
-            this.btnRegisterPet.Text = "Registrar";
-            this.btnRegisterPet.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnRegisterPet.UseAccentColor = false;
-            this.btnRegisterPet.UseVisualStyleBackColor = true;
-            // 
-            // txtPetName
-            // 
-            this.txtPetName.AnimateReadOnly = false;
-            this.txtPetName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtPetName.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtPetName.Depth = 0;
-            this.txtPetName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtPetName.HelperText = "Nombre";
-            this.txtPetName.HideSelection = true;
-            this.txtPetName.Hint = "Nombre";
-            this.txtPetName.LeadingIcon = null;
-            this.txtPetName.Location = new System.Drawing.Point(847, 127);
-            this.txtPetName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtPetName.MaxLength = 32767;
-            this.txtPetName.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtPetName.Name = "txtPetName";
-            this.txtPetName.PasswordChar = '\0';
-            this.txtPetName.PrefixSuffixText = null;
-            this.txtPetName.ReadOnly = false;
-            this.txtPetName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtPetName.SelectedText = "";
-            this.txtPetName.SelectionLength = 0;
-            this.txtPetName.SelectionStart = 0;
-            this.txtPetName.ShortcutsEnabled = true;
-            this.txtPetName.Size = new System.Drawing.Size(359, 48);
-            this.txtPetName.TabIndex = 14;
-            this.txtPetName.TabStop = false;
-            this.txtPetName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtPetName.TrailingIcon = null;
-            this.txtPetName.UseSystemPasswordChar = false;
+            this.dataGridPets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridPets.Location = new System.Drawing.Point(14, 103);
+            this.dataGridPets.Name = "dataGridPets";
+            this.dataGridPets.RowHeadersWidth = 51;
+            this.dataGridPets.RowTemplate.Height = 29;
+            this.dataGridPets.Size = new System.Drawing.Size(795, 188);
+            this.dataGridPets.TabIndex = 21;
             // 
             // tabProducts
             // 
@@ -1065,6 +1084,19 @@
             this.materialCheckbox2.Text = "materialCheckbox2";
             this.materialCheckbox2.UseVisualStyleBackColor = true;
             // 
+            // lblPetMsg
+            // 
+            this.lblPetMsg.AutoSize = true;
+            this.lblPetMsg.Depth = 0;
+            this.lblPetMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblPetMsg.Location = new System.Drawing.Point(17, 201);
+            this.lblPetMsg.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblPetMsg.Name = "lblPetMsg";
+            this.lblPetMsg.Size = new System.Drawing.Size(152, 19);
+            this.lblPetMsg.TabIndex = 24;
+            this.lblPetMsg.Text = "Information Message";
+            this.lblPetMsg.Visible = false;
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1087,6 +1119,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCustomers)).EndInit();
             this.tabMascotas.ResumeLayout(false);
             this.tabMascotas.PerformLayout();
+            this.materialCard1.ResumeLayout(false);
+            this.materialCard1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPets)).EndInit();
             this.tabProducts.ResumeLayout(false);
             this.tabProducts.PerformLayout();
@@ -1147,7 +1181,9 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialTextBox2 txtCustomerName;
         private MaterialSkin.Controls.MaterialTextBox2 txtCustomerDNI;
-        private MaterialSkin.Controls.MaterialLabel lblMessage;
+        private MaterialSkin.Controls.MaterialLabel lblCusMsg;
         private MaterialSkin.Controls.MaterialTextBox2 txtCustomerPhone;
+        private MaterialSkin.Controls.MaterialCard materialCard1;
+        private MaterialSkin.Controls.MaterialLabel lblPetMsg;
     }
 }
