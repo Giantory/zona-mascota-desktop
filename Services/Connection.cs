@@ -1,6 +1,6 @@
 ﻿namespace Services
 {
-    public class Connection
+    public abstract class Connection
     {
         public string stringConnection { get; set; }
 

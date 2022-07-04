@@ -5,9 +5,9 @@ using Models;
 
 namespace Services
 {
-    public class Customer: Connection
+    public class Product:Connection
     {
-        public void registerCustomer(string name, int district, string email, int dni, int phone)
+        public void registerProduct(string description, int category, double purchasePrice, double salePrice)
         {
             // Mensajes por defecto
             this.status = 1;
@@ -22,20 +22,19 @@ namespace Services
                     // El comando
                     SqlCommand cmd = con.CreateCommand();
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = "dbo.usp_register_customer";
+                    cmd.CommandText = "dbo.usp_register_product";
                     // Parametros
-                    cmd.Parameters.Add("@p_name", SqlDbType.VarChar, 100).Value = name;
-                    cmd.Parameters.Add("@p_district", SqlDbType.Int).Value = district;
-                    cmd.Parameters.Add("@p_email", SqlDbType.VarChar, 100).Value = email;
-                    cmd.Parameters.Add("@p_dni", SqlDbType.Int).Value = dni;
-                    cmd.Parameters.Add("@p_phone", SqlDbType.Int).Value = phone;
+                    cmd.Parameters.Add("@p_description", SqlDbType.VarChar, 100).Value = description;
+                    cmd.Parameters.Add("@p_category", SqlDbType.Int).Value = category;
+                    cmd.Parameters.Add("@p_purchasePrice", SqlDbType.Money).Value = purchasePrice;
+                    cmd.Parameters.Add("@p_salePrice", SqlDbType.Money).Value = salePrice;
                     cmd.Parameters.Add("@p_id", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@p_status", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@p_message", SqlDbType.VarChar, 1000).Direction = ParameterDirection.Output;
                     // Ejecutar el procedimiento
                     cmd.ExecuteNonQuery();
-                    this.status = Convert.ToInt32(cmd.Parameters["@p_status"].Value);
-                    this.message = cmd.Parameters["@p_message"].ToString();
+                    this.status = Convert.ToInt32(cmd.Parameters["@p_status"].Value);                   
+                    this.message = cmd.Parameters["@p_mensaje"].Value.ToString();
                     cmd.Dispose();
                 }
                 catch (Exception e)
@@ -45,7 +44,7 @@ namespace Services
                 }
             }
         }
-        public DataTable getCustomers()
+        public DataTable getProducts()
         {
             DataTable tb = new DataTable();
             SqlDataReader reader;
@@ -53,7 +52,7 @@ namespace Services
             {
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
-                cmd.CommandText = ("SELECT * FROM Customer");
+                cmd.CommandText = ("SELECT * FROM Product");
                 reader = cmd.ExecuteReader();
                 tb.Load(reader);
                 reader.Close();
@@ -62,6 +61,5 @@ namespace Services
 
             return tb;
         }
-
     }
 }
